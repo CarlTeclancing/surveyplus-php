@@ -4,6 +4,15 @@
 
 <?php require "partials/navigation.php" ?>
 
+<?php
+
+    use Surveyplus\App\Config\Database;
+
+    $database = new Database();
+    $database->connect();
+
+?>
+
 
 <main>
 

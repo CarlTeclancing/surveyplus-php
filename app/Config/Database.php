@@ -21,9 +21,10 @@ class Database{
         $this->dsn = [
             "host" => "localhost",
             "database" => "surveyplus",
+            "port" => 33012,
             "username" => "root",
             "password" => "",
-            "engine" => "mysql"
+            "driver" => "mysql"
         ];
 
     }
@@ -36,13 +37,11 @@ class Database{
     public function connect()
     {   
        try{
-            $this->conn = new PDO("$this->dsn['engine']:host=$this->dsn['host'];dbname=$this->dsn['database']", $this->dsn['username'], $this->dsn['password']);
+            $this->conn = new PDO($this->dsn['driver'].":host=".$this->dsn['host'].";port=".$this->dsn['port'].";dbname=".$this->dsn['database'], $this->dsn['username'], $this->dsn['password']);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
        } catch(PDOException $e){
-
-            throw $e->getMessage();
-
+            echo "Connection Failed " . $e->getMessage();
        }
 
     }

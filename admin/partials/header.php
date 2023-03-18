@@ -1,4 +1,4 @@
-<?php require "../path.php"  ?>
+<?php require "./../vendor/autoload.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">

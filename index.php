@@ -4,10 +4,6 @@
 
 <?php require "partials/navigation.php" ?>
 
-<?php
-
-    debug_array($_SERVER);  
-?>
 
 <main>
 
